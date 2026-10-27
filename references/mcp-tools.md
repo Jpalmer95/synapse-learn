@@ -28,9 +28,10 @@ Use this first — it is cheaper than search and tells you what is actually teac
 { "query": "common-mode EMI wide bandgap", "limit": 8 }
 ```
 
-Hybrid vector + trigram search over topics, bottlenecks, and OER resources. Falls back to
-trigram when the deployment has no embedding backend configured. Only returns topics the caller
-may see.
+Hybrid search. Returns `topics` (title/description matches), `units` (matches inside lesson prose —
+use these to jump straight to the right unit), `bottlenecks`, and `resources`. When the deployment has
+no embedding backend, it degrades to trigram + word matching rather than returning nothing. Only
+returns content the caller may see.
 
 ## synapse.get_course
 
